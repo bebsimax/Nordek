@@ -9,7 +9,6 @@ INSERT INTO `Difficulties` (Difficulty, Value) VALUES
     ('medium', '15'),
     ('hard', '20');
     
-
 INSERT INTO `Nouns` (ArtikkelID, EntallU, EntallB, FlertallU, FlertallB) VALUES
     ('2', 'and', 'anda', 'ender', 'endene'),
     ('2', 'bok', 'boka', 'bøker', 'bøkene'),
@@ -30,8 +29,6 @@ INSERT INTO `Nouns` (ArtikkelID, EntallU, EntallB, FlertallU, FlertallB) VALUES
 INSERT INTO `Languages` (Lang) VALUES
     ('english'),
     ('polish');
-
-
 
 INSERT INTO `Translations` (LangID, Translation) VALUES
     ('1', 'duck'),
@@ -100,3 +97,18 @@ INSERT INTO `Nouns_Translations` (NounID, TranslationID) VALUES
     ('14', '28'),
     ('15', '29'),
     ('15', '30');
+
+INSERT INTO Repetitions (NounID, UserID, DifficultyID, DateCreated, LastUpdated, Count) VALUES 
+    ('1', '1', '1', '2021-06-21', '2021-06-21', '5'),
+    ('2', '1', '1', '2021-06-21', '2022-03-21', '5'),
+                                                                                               
+    ('3', '1', '2', '2021-06-21', '2022-01-02', '3'),
+    ('4', '1', '2', '2022-03-21', '2022-03-21', '2'),
+                                                                                               
+    ('5', '1', '3', '2022-03-21', '2022-03-21', '2'),
+    ('6', '1', '3', '2022-03-21', '2022-03-21', '5'),
+                                                                                               
+    ('7', '1', '4', '2022-03-21', '2022-03-21', '5'),
+    ('8', '1', '4', '2022-03-21', '2022-03-21', '5');
+                                                                                               
+                                                                                               

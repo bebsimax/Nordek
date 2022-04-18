@@ -13,7 +13,16 @@ public class SqliteDataAccess
     {
         using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
         {
-            var output = cnn.Query<Noun>("select EntallU, EntallB, FlertallB, FlertallU from Nouns", new DynamicParameters());
+            var output = cnn.Query<Noun>("select EntallU, EntallB, FlertallB, FlertallU from Nouns;", new DynamicParameters());
+            return output.ToList();
+        }
+    }
+
+    public static List<User> LoadUsers()
+    {
+        using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+        {
+            var output = cnn.Query<User>("SELECT login FROM Users;", new DynamicParameters());
             return output.ToList();
         }
     }

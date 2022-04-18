@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nordek"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Nordek" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -28,7 +28,12 @@
         </Grid.RowDefinitions>
         
         <TextBlock Grid.Column="1" Grid.Row="1">
-            Rudy Smiec
+            Users
         </TextBlock>
+        
+        <ListBox Grid.Row="1" Grid.Column="2" x:Name="UsersList" Grid.ColumnSpan="2" Grid.RowSpan="4" Width="500" Height="300">
+        </ListBox>
+        
+        <Button Grid.Column="1" Grid.Row="3" x:Name="loadUsersButton" Content="Load Users" Click="LoadUsersButton_OnClick"/>
     </Grid>
 </Window>

@@ -9,22 +9,22 @@ INSERT INTO `Difficulties` (Difficulty, Value) VALUES
     ('medium', '15'),
     ('hard', '20');
     
-INSERT INTO `Nouns` (ArtikkelID, EntallU, EntallB, FlertallU, FlertallB) VALUES
-    ('2', 'and', 'anda', 'ender', 'endene'),
-    ('2', 'bok', 'boka', 'bøker', 'bøkene'),
-    ('3', 'barn', 'barnet', 'barn', 'barna'),
-    ('3', 'bein', 'beinet', 'bein', 'beina'),
-    ('3', 'besøk', 'besøket', 'besøk', 'besøkene'),
-    ('1', 'bonde', 'bonden', 'bønder', 'bøndene'),
-    ('1', 'bror', 'broren', 'brødre', 'brødrene'),
-    ('2', 'datter', 'dattera', 'døtre', 'døtrene'),
-    ('3', 'eventyr', 'eventyret', 'eventyr', 'eventyrene'),
-    ('1', 'far', 'faren', 'fedre', 'fedrene'),
-    ('1', 'forelder', 'forelderen', 'foreldre', 'foreldrene'),
-    ('3', 'forsøk', 'forsøket', 'forsøk', 'forsøkene'),
-    ('1', 'fot', 'foten', 'føtter', 'føttene'),
-    ('2', 'gulrot', 'gulrota', 'gulrøtter', 'gulrøttene'),
-    ('2', 'gås', 'gåsa', 'gjess', 'gjessene');
+INSERT INTO `Nouns` (ArtikkelID, EntallU, EntallB, FlertallU, FlertallB, Regular) VALUES
+    ('2', 'and', 'anda', 'ender', 'endene', 'true'),
+    ('2', 'bok', 'boka', 'bøker', 'bøkene', 'true'),
+    ('3', 'barn', 'barnet', 'barn', 'barna', 'true'),
+    ('3', 'bein', 'beinet', 'bein', 'beina', 'true'),
+    ('3', 'besøk', 'besøket', 'besøk', 'besøkene', 'true'),
+    ('1', 'bonde', 'bonden', 'bønder', 'bøndene', 'true'),
+    ('1', 'bror', 'broren', 'brødre', 'brødrene', 'true'),
+    ('2', 'datter', 'dattera', 'døtre', 'døtrene', 'true'),
+    ('3', 'eventyr', 'eventyret', 'eventyr', 'eventyrene', 'true'),
+    ('1', 'far', 'faren', 'fedre', 'fedrene', 'true'),
+    ('1', 'forelder', 'forelderen', 'foreldre', 'foreldrene', 'true'),
+    ('3', 'forsøk', 'forsøket', 'forsøk', 'forsøkene', 'true'),
+    ('1', 'fot', 'foten', 'føtter', 'føttene', 'true'),
+    ('2', 'gulrot', 'gulrota', 'gulrøtter', 'gulrøttene', 'true'),
+    ('2', 'gås', 'gåsa', 'gjess', 'gjessene', 'true');
 
 INSERT INTO `Languages` (Lang) VALUES
     ('english'),

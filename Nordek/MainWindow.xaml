@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:Nordek.ViewModels"
         xmlns:views="clr-namespace:Nordek.Views"
+        xmlns:models="clr-namespace:Nordek.Models"
         mc:Ignorable="d"
-        Title="Nordek" Height="450" Width="800">
+        Title="Nordek" Height="600" Width="800">
     
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
@@ -15,6 +16,21 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewmodels:AccountViewModel}">
                 <views:AccountView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                <views:LoginView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CreateUserViewModel}">
+                <views:CreateUserView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:SearchViewModel}">
+                <views:SearchView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ManagementViewModel}">
+                <views:ManagementView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ManageNounsViewModel}">
+                <views:ManageNounsView />
             </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>

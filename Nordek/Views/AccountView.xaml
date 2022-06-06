@@ -18,7 +18,7 @@
                    Text="Account" />
 
         <TextBlock Grid.Row="1" Margin="0 20 0 0"
-                   Text="{Binding Name}" />
+                   Text="{Binding WelcomeMsg}" />
 
         <Button Grid.Row="2" Margin="0 20 0 0" Padding="5 2"
                 HorizontalAlignment="Left"

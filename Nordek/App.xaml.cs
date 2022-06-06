@@ -15,12 +15,22 @@ namespace Nordek
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            Users = SqliteDataAccess.LoadUsers();
-            
+            SqliteDataAccess.SetupConnection();
             NavigationStore navigationStore = new NavigationStore();
-
-            navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
-
+            var activeUser = SqliteDataAccess.GetActiveUser();
+            
+            if (activeUser.Count==0)
+            {
+                navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
+            }
+            else
+            {
+                Globals.ActiveUser = activeUser[0];
+                
+                navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
+                
+            }
+            
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(navigationStore)

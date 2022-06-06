@@ -1,30 +1,25 @@
-﻿INSERT INTO `Artikkels` (Artikkel) VALUES
-    ('en'),
-    ('ei'),
-    ('et');
-
-INSERT INTO `Difficulties` (Difficulty, Value) VALUES
-    ('trivial', '5'),
-    ('easy', '10'),
-    ('medium', '15'),
-    ('hard', '20');
+﻿INSERT INTO `Difficulties` (Difficulty, Value, DaysToRepeat) VALUES
+    ('trivial', '5', '180'),
+    ('easy', '10', '14'),
+    ('medium', '15', '5'),
+    ('hard', '20', '3');
     
-INSERT INTO `Nouns` (ArtikkelID, EntallU, EntallB, FlertallU, FlertallB, Regular) VALUES
-    ('2', 'and', 'anda', 'ender', 'endene', 'true'),
-    ('2', 'bok', 'boka', 'bøker', 'bøkene', 'true'),
-    ('3', 'barn', 'barnet', 'barn', 'barna', 'true'),
-    ('3', 'bein', 'beinet', 'bein', 'beina', 'true'),
-    ('3', 'besøk', 'besøket', 'besøk', 'besøkene', 'true'),
-    ('1', 'bonde', 'bonden', 'bønder', 'bøndene', 'true'),
-    ('1', 'bror', 'broren', 'brødre', 'brødrene', 'true'),
-    ('2', 'datter', 'dattera', 'døtre', 'døtrene', 'true'),
-    ('3', 'eventyr', 'eventyret', 'eventyr', 'eventyrene', 'true'),
-    ('1', 'far', 'faren', 'fedre', 'fedrene', 'true'),
-    ('1', 'forelder', 'forelderen', 'foreldre', 'foreldrene', 'true'),
-    ('3', 'forsøk', 'forsøket', 'forsøk', 'forsøkene', 'true'),
-    ('1', 'fot', 'foten', 'føtter', 'føttene', 'true'),
-    ('2', 'gulrot', 'gulrota', 'gulrøtter', 'gulrøttene', 'true'),
-    ('2', 'gås', 'gåsa', 'gjess', 'gjessene', 'true');
+INSERT INTO `Nouns` (Artikkel, EntallU, EntallB, FlertallU, FlertallB, Regular) VALUES
+    ('ei', 'and', 'anda', 'ender', 'endene', 'false'),
+    ('ei', 'bok', 'boka', 'bøker', 'bøkene', 'false'),
+    ('et', 'barn', 'barnet', 'barn', 'barna', 'false'),
+    ('et', 'bein', 'beinet', 'bein', 'beina', 'false'),
+    ('et', 'besøk', 'besøket', 'besøk', 'besøkene', 'false'),
+    ('en', 'bonde', 'bonden', 'bønder', 'bøndene', 'false'),
+    ('en', 'bror', 'broren', 'brødre', 'brødrene', 'false'),
+    ('ei', 'datter', 'dattera', 'døtre', 'døtrene', 'false'),
+    ('et', 'eventyr', 'eventyret', 'eventyr', 'eventyrene', 'false'),
+    ('en', 'far', 'faren', 'fedre', 'fedrene', 'false'),
+    ('en', 'forelder', 'forelderen', 'foreldre', 'foreldrene', 'false'),
+    ('et', 'forsøk', 'forsøket', 'forsøk', 'forsøkene', 'false'),
+    ('en', 'fot', 'foten', 'føtter', 'føttene', 'false'),
+    ('ei', 'gulrot', 'gulrota', 'gulrøtter', 'gulrøttene', 'false'),
+    ('ei', 'gås', 'gåsa', 'gjess', 'gjessene', 'false');
 
 INSERT INTO `Languages` (Lang) VALUES
     ('english'),
@@ -98,17 +93,24 @@ INSERT INTO `Nouns_Translations` (NounID, TranslationID) VALUES
     ('15', '29'),
     ('15', '30');
 
-INSERT INTO Repetitions (NounID, UserID, DifficultyID, DateCreated, LastUpdated, Count) VALUES 
-    ('1', '1', '1', '2021-06-21', '2021-06-21', '5'),
-    ('2', '1', '1', '2021-06-21', '2022-03-21', '5'),
+INSERT INTO Nouns_Repetitions (NounID, UserID, DifficultyID, DateRepeated) VALUES 
+    ('1', '1', '4', '2021-06-21'),
+    ('1', '1', '3', '2021-06-22'),
+    ('1', '1', '2', '2021-06-23'),
+    ('1', '1', '1', '2021-06-24'),
+                                                                                  
+    ('2', '1', '4', '2021-06-24'),
                                                                                                
-    ('3', '1', '2', '2021-06-21', '2022-01-02', '3'),
-    ('4', '1', '2', '2022-03-21', '2022-03-21', '2'),
+    ('3', '1', '2', '2021-06-21'),
+    ('4', '1', '2', '2022-03-21'),
                                                                                                
-    ('5', '1', '3', '2022-03-21', '2022-03-21', '2'),
-    ('6', '1', '3', '2022-03-21', '2022-03-21', '5'),
-                                                                                               
-    ('7', '1', '4', '2022-03-21', '2022-03-21', '5'),
-    ('8', '1', '4', '2022-03-21', '2022-03-21', '5');
+    ('5', '1', '3', '2022-03-21'),
+    ('6', '1', '3', '2022-03-21'),
+
+    ('7', '1', '4', '2022-03-19'),
+    ('7', '1', '4', '2022-03-20'),                                                                              
+    ('7', '1', '4', '2022-03-21'),
+                                                                                  
+    ('8', '1', '4', '2022-03-21');
                                                                                                
                                                                                                

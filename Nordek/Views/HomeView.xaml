@@ -11,6 +11,12 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0"
@@ -24,5 +30,24 @@
                 HorizontalAlignment="Left"
                 Command="{Binding NavigateAccountCommand}"
                 Content="Account" />
+        
+        <Button Grid.Row="3" Margin="0 20 0 0" Padding="5 2"
+                HorizontalAlignment="Left"
+                Command="{Binding LogoutCommand}"
+                Content="Logout" />
+        
+        <Button Grid.Row="4" Margin="0 20 0 0" Padding="5 2"
+                HorizontalAlignment="Left"
+                Command="{Binding NavigateSearchCommand}"
+                Content="Search" />
+        
+        <Button Grid.Row="5" Margin="0 20 0 0" Padding="5 2"
+                HorizontalAlignment="Left"
+                Command="{Binding Repeat}"
+                Content="Repeat" />
+        <Button Grid.Row="6" Margin="0 20 0 0" Padding="5 2"
+                HorizontalAlignment="Left"
+                Command="{Binding NavigateManagementCommand}"
+                Content="Management" />
     </Grid>
 </UserControl>

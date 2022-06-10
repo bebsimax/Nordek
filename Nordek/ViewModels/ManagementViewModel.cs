@@ -11,6 +11,8 @@ public class ManagementViewModel : ViewModelBase
     
     public ICommand NavigateHomeCommand { get; }
     public ICommand NavigateManageNounsCommand { get; }
+    public ICommand NavigateManageVerbsCommand { get; }
+    
     public ManagementViewModel(NavigationStore navigationStore)
     {
         _navigationStore = navigationStore;
@@ -20,5 +22,8 @@ public class ManagementViewModel : ViewModelBase
         NavigateManageNounsCommand = 
             new NavigateCommand<ManageNounsViewModel>(new NavigationService<ManageNounsViewModel>(
                 navigationStore, () => new ManageNounsViewModel(navigationStore)));
+        NavigateManageVerbsCommand = 
+            new NavigateCommand<ManageVerbsViewModel>(new NavigationService<ManageVerbsViewModel>(
+                navigationStore, () => new ManageVerbsViewModel(navigationStore)));
     }
 }

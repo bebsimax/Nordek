@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Nordek.Views"
              xmlns:models="clr-namespace:Nordek.Models"
              mc:Ignorable="d"
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="1000" d:DesignWidth="1200">
     
     <UserControl.Resources>
         <models:Nouns x:Key="nouns"/>
@@ -25,6 +25,8 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
         
@@ -34,15 +36,18 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         
         
-        <DataGrid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" x:Name="nounSearchGrid"
+        <DataGrid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" x:Name="nounSearchGrid"
                   ItemsSource="{Binding Source={StaticResource cvsNouns}}"
                   CanUserAddRows="False"
                   AutoGenerateColumns="False"
-                  AlternatingRowBackground="LightGreen">
+                  AlternatingRowBackground="LightGreen"
+                  FontSize="20"
+                  Height="600">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Artikkel" Binding="{Binding Artikkel}"/>
@@ -57,7 +62,9 @@
         
         <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cbActive"
                   SelectionChanged="Selector_OnSelectionChanged"
-                  Width="100">
+                  Width="100"
+                  FontSize="20"
+                  Margin="5">
             <ComboBoxItem Content="All"></ComboBoxItem>
             <ComboBoxItem Content="Active"></ComboBoxItem>
             <ComboBoxItem Content="Non Active"></ComboBoxItem>
@@ -65,22 +72,34 @@
         
         <ComboBox Grid.Row="1" Grid.Column="2" x:Name="cbRegular"
                   SelectionChanged="Selector_OnSelectionChanged"
-                  Width="100">
+                  Width="100"
+                  FontSize="20"
+                  Margin="5">
             <ComboBoxItem Content="All"></ComboBoxItem>
             <ComboBoxItem Content="Regular"></ComboBoxItem>
             <ComboBoxItem Content="Irregular"></ComboBoxItem>
         </ComboBox>
         
-        <Label Grid.Row="1" Grid.Column="3">Search phrase</Label>
+        <Label Grid.Row="1" Grid.Column="3" 
+               FontSize="20"
+               Margin="5">Search phrase
+        </Label>
+        
         <TextBox Grid.Row="1" Grid.Column="4"
                  x:Name="tbSearch"
                  KeyDown="TbSearch_OnKeyDown"
                  TextChanged="TbSearch_OnTextChanged"
-                 Width="100"></TextBox>
-        <Button Grid.Row="2" Grid.Column="4" 
+                 Width="100"
+                 FontSize="20"
+                 Margin="5">
+        </TextBox>
+        <Button Grid.Row="3" Grid.Column="1" 
                 Width="100"
                 Height="40"
-                Content="Return"
+                Background="Aqua"
+                Content="Home"
+                FontSize="28"
+                Margin="5"
                 Command="{Binding NavigateHomeCommand}"/>
     </Grid>
 </UserControl>

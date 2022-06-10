@@ -36,7 +36,5 @@ public class SaveNounsChangesToDb : CommandBase
         }
 
         Globals.NounsIDsToDelete = new List<long>();
-
-        _viewModel.UpdateView();
     }
 }

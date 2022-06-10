@@ -5,7 +5,7 @@ namespace Nordek.Models;
 
 public class Nouns : List<Noun>
 {
-    private List<Noun> nouns;
+    public List<Noun> nouns { get; set; }
 
     public Nouns(List<Noun> n)
     {

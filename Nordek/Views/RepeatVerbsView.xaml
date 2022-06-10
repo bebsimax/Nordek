@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="Nordek.Views.RepeatVerbsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Nordek.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="1000" d:DesignWidth="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                   Text="{Binding Translation}"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Background="Plum"
+                   FontSize="34"
+                   Width="200">
+        </TextBlock>
+        
+        <Label Grid.Row="2" Grid.Column="1" 
+               HorizontalAlignment="Center"
+               FontSize="28">
+            Infinitiv
+        </Label>
+        
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="4">
+            <TextBlock 
+                Text="{Binding Infinitiv}" 
+                Width="150"
+                HorizontalAlignment="Center"
+                TextAlignment="Center"
+                FontSize="28">
+            </TextBlock>
+        </Border>
+        
+        <Label Grid.Row="2" Grid.Column="2" 
+               HorizontalAlignment="Center"
+               FontSize="28">Presens
+        </Label>
+        
+        <Border Grid.Row="3" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Margin="4">
+            <TextBlock 
+                Text="{Binding Presens}" 
+                Width="150"
+                HorizontalAlignment="Center"
+                TextAlignment="Center"
+                FontSize="28">
+            </TextBlock>
+        </Border>
+        
+        <Label Grid.Row="2" Grid.Column="3" 
+               HorizontalAlignment="Center"
+               FontSize="28">
+            Preteritum
+        </Label>
+        
+        <Border Grid.Row="3" Grid.Column="3"  BorderThickness="1" BorderBrush="Black" Margin="4">
+            <TextBlock 
+                       Text="{Binding Preteritum}" 
+                       TextAlignment="Center"
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="28">
+            </TextBlock>
+        </Border>
+        
+        <Label Grid.Row="2" Grid.Column="4" 
+               HorizontalAlignment="Center"
+               FontSize="28">
+            Preteritum P.
+        </Label>
+        
+        <Border Grid.Row="3" Grid.Column="4"  BorderThickness="1" BorderBrush="Black" Margin="4">
+            <TextBlock  Text="{Binding PreteritumPerfektum}" 
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       FontSize="28">
+            </TextBlock>
+        </Border>
+        
+        <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"
+                Content="Show"
+                FontSize="28"
+                Width="110"
+                Command="{Binding ShowVerbsCommand}">
+            
+        </Button>
+        
+        <Button Grid.Row="5" Grid.Column="1"
+                Content="Hard"
+                FontSize="28"
+                Width="110"
+                Background="Crimson"
+                Margin="4"
+                HorizontalAlignment="Center"
+                Command="{Binding SaveHardVerbRepeatCommand}">
+        </Button>
+        
+        <Button Grid.Row="5" Grid.Column="2"
+                Content="Medium"
+                Width="110"
+                FontSize="28"
+                Background="Goldenrod"
+                Margin="4"
+                HorizontalAlignment="Center"
+                Command="{Binding SaveMediumVerbRepeatCommand}">
+        </Button>
+        
+        <Button Grid.Row="5" Grid.Column="3"
+                Content="Easy"
+                Width="110"
+                FontSize="28"
+                Background="Lime"
+                Margin="4"
+                HorizontalAlignment="Center"
+                Command="{Binding SaveEasyVerbRepeatCommand}">
+        </Button>
+        
+        <Button Grid.Row="5" Grid.Column="4"
+                Content="Trivial"
+                Width="110"
+                FontSize="28"
+                Background="Green"
+                Margin="4"
+                HorizontalAlignment="Center"
+                Command="{Binding SaveTrivialVerbRepeatCommand}">
+        </Button>
+        
+        <Button Grid.Row="5" Grid.Column="5"
+                Content="Go back"
+                Background="Aqua"
+                FontSize="28"
+                Margin="4"
+                Command="{Binding NavigateRepeatCommand}">
+        </Button>
+        
+        <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"
+               FontSize="28"
+               HorizontalAlignment="Right"
+               >Verbs left to repeat
+        </Label>
+        
+        <TextBlock Grid.Row="6" Grid.Column="3"
+                   FontSize="28"
+                   Text="{Binding VerbCountLeft}"
+                   TextAlignment="Left"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        
+    </Grid>
+</UserControl>

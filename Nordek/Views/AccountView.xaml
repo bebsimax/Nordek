@@ -5,23 +5,188 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Nordek.Views"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1000" d:DesignWidth="1200">
     <Grid MaxWidth="1000" Margin="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
         </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0 20 0 0"
+                   Text="{Binding WelcomeMsg}"
+                   FontSize="28"/>
+        
+        <Label Grid.Row="2" Grid.Column="1"
+               FontSize="34"
+               HorizontalAlignment="Center">Nouns
+        </Label>
+        
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="4">
+            <WrapPanel>
+                <Label
+                    FontSize="28"
+                    Width="130">All</Label>
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding AllNounsCount}">
+                </TextBlock>
+                
+                <Label 
+                       FontSize="28"
+                       Width="130">Active</Label>
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding ActiveNounsCount}">
+                </TextBlock>
+                
+                <Label 
+                       FontSize="28"
+                       Width="130">Learned</Label>
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding LearnedNounsCount}">
+                </TextBlock>
+                
+                <Label 
+                       FontSize="28"
+                       Width="130">Progress</Label>
+                    
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding NounsProgressPercentage}">
+                </TextBlock>
+                
+                <Label 
+                    FontSize="28"
+                    Width="130">Repeats</Label>
+                    
+                
+                <TextBlock 
+                    FontSize="28"
+                    Width="90"
+                    TextAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="{Binding NounsRepeatsCount}">
+                </TextBlock>
+            </WrapPanel>
+        </Border>
+        
+        <Label Grid.Row="2" Grid.Column="2"
+               FontSize="34"
+               HorizontalAlignment="Center">Verbs
+        </Label>
+        
+        <Border Grid.Row="3" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Margin="4">
+            <WrapPanel>
+                <Label
+                    FontSize="28"
+                    Width="130">All</Label>
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding AllVerbsCount}">
+                </TextBlock>
+                
+                <Label 
+                       FontSize="28"
+                       Width="130">Active</Label>
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding ActiveVerbsCount}">
+                </TextBlock>
+                
+                <Label 
+                       FontSize="28"
+                       Width="130">Learned</Label>
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding LearnedVerbsCount}">
+                </TextBlock>
+                
+                <Label 
+                       FontSize="28"
+                       Width="130">Progress</Label>
+                    
+                
+                <TextBlock 
+                           FontSize="28"
+                           Width="90"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding VerbsProgressPercentage}">
+                </TextBlock>
+                
+                <Label 
+                    FontSize="28"
+                    Width="130">Repeats</Label>
+                    
+                
+                <TextBlock 
+                    FontSize="28"
+                    Width="90"
+                    TextAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="{Binding VerbsRepeatsCount}">
+                </TextBlock>
+            </WrapPanel>
+        </Border>
 
-        <TextBlock Grid.Row="0"
-                   FontSize="28"
-                   Text="Account" />
-
-        <TextBlock Grid.Row="1" Margin="0 20 0 0"
-                   Text="{Binding WelcomeMsg}" />
-
-        <Button Grid.Row="2" Margin="0 20 0 0" Padding="5 2"
-                HorizontalAlignment="Left"
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Margin="0 20 0 0" Padding="5 2"
+                HorizontalAlignment="Center"
+                FontSize="28"
+                Width="120"
+                Height="80"
+                Background="Aqua"
                 Command="{Binding NavigateHomeCommand}"
                 Content="Home" />
     </Grid>

@@ -5,8 +5,216 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Nordek.Views"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="1000" d:DesignWidth="1200">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="34">Nouns</Label>
+        <Label Grid.Row="2" Grid.Column="1" FontSize="28">Hard</Label>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding HardNounToRepeatCount}"
+                   FontSize="28"
+                   Width="50"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="2" Grid.Column="3"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatHardNounsCommand}"
+                Background="Crimson">
+        </Button>
+        
+        <Label Grid.Row="3" Grid.Column="1" FontSize="28">Medium</Label>
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding MediumNounToRepeatCount}"
+                   FontSize="28"
+                   Width="50"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="3" Grid.Column="3"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatMediumNounsCommand}"
+                Background="Goldenrod">
+        </Button>
+        
+        <Label Grid.Row="4" Grid.Column="1" FontSize="28">Easy</Label>
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="{Binding EasyNounToRepeatCount}"
+                   FontSize="28"
+                   Width="50"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="4" Grid.Column="3"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatEasyNounsCommand}"
+                Background="Lime">
+        </Button>
+        
+        <Label Grid.Row="5" Grid.Column="1" FontSize="28">Trivial</Label>
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="{Binding TrivialNounToRepeatCount}"
+                   FontSize="28"
+                   Width="50"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="5" Grid.Column="3"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatTrivialNounsCommand}"
+                Background="Green">
+        </Button>
+        
+        <Label Grid.Row="6" Grid.Column="1" FontSize="28">New</Label>
+        <TextBlock Grid.Row="6" Grid.Column="2" Text="{Binding NewNounToRepeatCount}"
+                   FontSize="28"
+                   Width="50"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="6" Grid.Column="3"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatNewNounsCommand}">
+        </Button>
+        
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"
+                Margin="2"
+                Content="Repeat all"
+                FontSize="28"
+                Command="{Binding RepeatAllNounsCommand}">
+                
+        </Button>
+        
+        <Label Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="34">Verbs</Label>
+        <Label Grid.Row="2" Grid.Column="4" FontSize="28">Hard</Label>
+        <TextBlock Grid.Row="2" Grid.Column="5" Text="{Binding HardVerbToRepeatCount}"
+                   Width="50"
+                   FontSize="28"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="2" Grid.Column="6"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatHardVerbsCommand}"
+                Background="Crimson">
+        </Button>
+        
+        <Label Grid.Row="3" Grid.Column="4" FontSize="28">Medium</Label>
+        <TextBlock Grid.Row="3" Grid.Column="5" Text="{Binding MediumVerbToRepeatCount}"
+                   Width="50"
+                   FontSize="28"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="3" Grid.Column="6"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatMediumVerbsCommand}"
+                Background="Goldenrod">
+        </Button>
+        
+        <Label Grid.Row="4" Grid.Column="4" FontSize="28">Easy</Label>
+        <TextBlock Grid.Row="4" Grid.Column="5" Text="{Binding EasyVerbToRepeatCount}"
+                   Width="50"
+                   FontSize="28"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="4" Grid.Column="6"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatEasyVerbsCommand}"
+                Background="Lime">
+        </Button>
+        
+        <Label Grid.Row="5" Grid.Column="4" FontSize="28">Trivial</Label>
+        <TextBlock Grid.Row="5" Grid.Column="5" Text="{Binding TrivialVerbToRepeatCount}"
+                   Width="50"
+                   FontSize="28"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="5" Grid.Column="6"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatTrivialVerbsCommand}"
+                Background="Green">
+        </Button>
+        
+        <Label Grid.Row="6" Grid.Column="4" FontSize="28">New</Label>
+        <TextBlock Grid.Row="6" Grid.Column="5" Text="{Binding NewVerbToRepeatCount}"
+                   FontSize="28"
+                   Width="50"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center">
+        </TextBlock>
+        <Button Grid.Row="6" Grid.Column="6"
+                Margin="2"
+                FontSize="28"
+                Content="Repeat"
+                Command="{Binding RepeatNewVerbsCommand}">
+        </Button>
+        
+        <Button Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="3"
+                Margin="2"
+                Content="Repeat all"
+                FontSize="28"
+                Command="{Binding RepeatAllVerbsCommand}">
+                
+        </Button>
+        
+        <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3"
+                Margin="10"
+                Background="Aqua"
+                Height="80"
+                FontSize="28"
+                Content="Home"
+                Command="{Binding NavigateHomeCommand}">
+        </Button>
+        
+        
         
     </Grid>
+    
 </UserControl>

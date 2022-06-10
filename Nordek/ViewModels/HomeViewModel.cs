@@ -8,7 +8,6 @@ namespace Nordek.ViewModels;
 
 public class HomeViewModel : ViewModelBase
 {
-    public string WelcomeMessage => "Welcome to my application.";
     public ICommand LogoutCommand { get; }
     public ICommand NavigateAccountCommand { get; }
     public ICommand NavigateSearchCommand { get; }

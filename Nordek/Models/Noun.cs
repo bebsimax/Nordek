@@ -18,6 +18,20 @@ public class Noun : IEditableObject, INotifyPropertyChanged
             this.EntallB = EntallB;
             this.FlertallU = FlertallU;
             this.FlertallB = FlertallB;
+            this.Translation = new string("");
+            this.Active = Active;
+            this.Regular = Regular;
+        }
+        
+        public NounData(Int64 ID, string Artikkel, string EntallU, string EntallB, string FlertallU, string FlertallB, string Translation, bool Active, bool Regular)
+        {
+            this.ID = ID;
+            this.Artikkel = Artikkel;
+            this.EntallU = EntallU;
+            this.EntallB = EntallB;
+            this.FlertallU = FlertallU;
+            this.FlertallB = FlertallB;
+            this.Translation = Translation;
             this.Active = Active;
             this.Regular = Regular;
         }
@@ -30,6 +44,7 @@ public class Noun : IEditableObject, INotifyPropertyChanged
         internal string EntallB;
         internal string FlertallU;
         internal string FlertallB;
+        internal string Translation;
         internal bool Active;
         internal bool Regular;
     }
@@ -45,6 +60,13 @@ public class Noun : IEditableObject, INotifyPropertyChanged
         bool Active, bool Regular)
     {
         nounData = new NounData(ID, Artikkel, EntallU, EntallB, FlertallU, FlertallB, Active, Regular);
+        New = false;
+    }
+    
+    public Noun(Int64 ID, string Artikkel, string EntallU, string EntallB, string FlertallU, string FlertallB,
+        string Translation, bool Active, bool Regular)
+    {
+        nounData = new NounData(ID, Artikkel, EntallU, EntallB, FlertallU, FlertallB, Translation, Active, Regular);
         New = false;
     }
     
@@ -163,6 +185,20 @@ public class Noun : IEditableObject, INotifyPropertyChanged
             {
                 nounData.FlertallB = value;
                 NotifyPropertyChanged(nameof(FlertallB));
+            }
+            
+        }
+    }
+    
+    public string Translation
+    {
+        get => nounData.Translation;
+        set
+        {
+            if (value != nounData.Translation)
+            {
+                nounData.Translation = value;
+                NotifyPropertyChanged(nameof(Translation));
             }
             
         }

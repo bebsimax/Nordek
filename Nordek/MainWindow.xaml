@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:Nordek.Views"
         xmlns:models="clr-namespace:Nordek.Models"
         mc:Ignorable="d"
-        Title="Nordek" Height="600" Width="800">
+        Title="Nordek" Height="1000" Width="1200">
     
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
@@ -32,6 +32,19 @@
             <DataTemplate DataType="{x:Type viewmodels:ManageNounsViewModel}">
                 <views:ManageNounsView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RepeatViewModel}">
+                <views:RepeatView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RepeatNounsViewModel}">
+                <views:RepeatNounsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ManageVerbsViewModel}">
+                <views:ManageVerbsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RepeatVerbsViewModel}">
+                <views:RepeatVerbsView />
+            </DataTemplate>
+            
         </ContentControl.Resources>
     </ContentControl>
 </Window>

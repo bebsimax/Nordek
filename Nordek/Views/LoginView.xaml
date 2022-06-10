@@ -6,11 +6,11 @@
              xmlns:local="clr-namespace:Nordek.Views"
              xmlns:h="900"
              mc:Ignorable="d"
-             d:DesignHeight="900" d:DesignWidth="600">
+             d:DesignHeight="1000" d:DesignWidth="12000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -19,7 +19,7 @@
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -27,7 +27,7 @@
         </Grid.ColumnDefinitions>
         
         <TextBlock Grid.Row="1" Grid.Column="2" x:Name="UsersTextBlock"
-                   FontSize="26"
+                   FontSize="34"
                    Text="Users"
                    HorizontalAlignment="Center"/>
         
@@ -35,27 +35,27 @@
                  ItemsSource="{Binding Users}"
                  Height="300"
                  Width="200"
+                 FontSize="20"
                  SelectedItem="{Binding SelectedUser}"/>
         
         <CheckBox Grid.Row="3" Grid.Column="2" Margin="4" x:Name="RememberCheckBox"
+                  FontSize="20"
                   Content="Remember Me"
                   IsChecked="{Binding RememberMe}"/> 
         
         
         <Button Grid.Row="4" Grid.Column="2" Margin="4" x:Name="LoginButton"
-                Height="30"
-                Width="80"
+                FontSize="28"
                 Content="LOGIN"
-                Background="CornflowerBlue"
+                Background="Aqua"
                 Command="{Binding LoginCommand}"/>
 
         <TextBlock Grid.Row="5" Grid.Column="2" x:Name="ErrorTextBlock"/>
         
         <Button Grid.Row="2" Grid.Column="3" x:Name="CreateUserButton" Margin="4"
                 Content="Create user"
-                Height="30"
-                Width="70"
-                Background="CornflowerBlue"
+                FontSize="28"
+                Background="Aqua"
                 VerticalAlignment="Top"
                 Command = "{Binding NavigateCreateUserCommand}"/>
         

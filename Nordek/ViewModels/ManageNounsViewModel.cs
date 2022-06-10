@@ -14,6 +14,7 @@ public class ManageNounsViewModel : ViewModelBase
     public ICommand NavigateHomeCommand { get; }
     public List<Noun> Nouns { get; set; }
     public ICommand SaveNounsChangesToDb { get;}
+    public List<Language> Languages { get; }
     
     public ManageNounsViewModel(NavigationStore navigationStore)
     {
@@ -25,12 +26,6 @@ public class ManageNounsViewModel : ViewModelBase
         Nouns = SqliteDataAccess.LoadNouns();
 
         SaveNounsChangesToDb = new SaveNounsChangesToDb(this);
-
+        Languages = SqliteDataAccess.GetLanguages();
     }
-
-    public void UpdateView()
-    {
-        Nouns = SqliteDataAccess.LoadNouns();
-    }
-    
 }

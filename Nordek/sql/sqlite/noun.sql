@@ -1,0 +1,39 @@
+﻿CREATE TABLE IF NOT EXISTS `Nouns` (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE,
+    Artikkel VARCHAR(2),
+    EntallU VARCHAR(50),
+    EntallB VARCHAR(50),
+    FlertallU VARCHAR(50),
+    FlertallB VARCHAR(50),
+    Active BOOLEAN DEFAULT FALSE,
+    Regular BOOLEAN DEFAULT FALSE
+    );
+CREATE INDEX active_index ON Nouns (Active);
+
+CREATE TABLE IF NOT EXISTS `Nouns_Translations` (
+    NounID INTEGER NOT NULL,
+    TranslationID INTEGER NOT NULL,
+    PRIMARY KEY(NounID, TranslationID),
+    FOREIGN KEY(NounID) REFERENCES Nouns(ID) ON DELETE CASCADE,
+    FOREIGN KEY (TranslationID) REFERENCES Translations(ID) ON DELETE CASCADE
+    );
+CREATE INDEX translation_nounid_index ON Nouns_Translations (NounID);
+
+CREATE TABLE IF NOT EXISTS `Nouns_Synonyms` (
+    NounID_1 INTEGER NOT NULL,
+    NounID_2 INTEGER NOT NULL,
+    PRIMARY KEY(NounID_1, NounID_2),
+    FOREIGN KEY(NounID_1) REFERENCES Nouns(ID) ON DELETE CASCADE,
+    FOREIGN KEY(NounID_1) REFERENCES Nouns(ID) ON DELETE CASCADE
+    );
+
+CREATE TABLE IF NOT EXISTS `Nouns_Repetitions` (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NounID INTEGER NOT NULL,
+    UserID INTEGER NOT NULL,
+    DifficultyID INTEGER NOT NULL,
+    DateRepeated DATE NOT NULL,
+    FOREIGN KEY(NounID) REFERENCES Nouns(ID) ON DELETE CASCADE,
+    FOREIGN KEY(UserID) REFERENCES Users(ID) ON DELETE CASCADE
+    );
+CREATE INDEX date_index ON Nouns_Repetitions (DateRepeated, UserID, DifficultyID);
